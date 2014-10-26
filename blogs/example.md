@@ -4,4 +4,4 @@
 
 还有照片
 
-![可爱的照片](http://www.animae.co.uk/images/ANIMAE.png =477x286)
+<img src="http://www.animae.co.uk/images/ANIMAE.png" width="477" height="286">
