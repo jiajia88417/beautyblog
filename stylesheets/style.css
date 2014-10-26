@@ -1,0 +1,57 @@
+body {
+  margin: 0px;
+  background:  #D67AA3;
+  min-width: 800px;
+}
+
+/* header image and page tile */
+body > .header > img.header_img{
+  width : 100%;
+  min-width: 800px;
+}
+body > .header > h3 {
+  font-family: 微软雅黑, 黑体;
+  font-weight: 300;
+  font-size: 24px;
+  display: inline;
+  color: #8E355D;
+  top : 30px;
+  left : 500px;
+  position: absolute;
+}
+
+/* header links disaply in horizental */
+.header_links {
+    left: 30%;
+    top: auto;
+    min-width: 400px;
+    position: absolute;
+}
+.header_links > ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.header_links > ul > li {
+    display: inline;
+}
+.header_links > ul > li > a {
+    float: left;
+    width: 6em;
+    text-decoration: none;
+    color: white;
+    background-color: #A65A9F;
+    padding: 0.2em 0.6em;
+}
+.header_links > ul > li > a:hover {
+    background-color: #F9A4B7;
+}
+
+.content_body {
+    width: 600px;
+    position: relative;
+    border: 2px solid;
+    border-radius: 25px;
+}
