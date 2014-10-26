@@ -5,6 +5,7 @@
     <title>戴biubiu爱美丽</title>
     <link rel='stylesheet' type='text/css' href='stylesheets/style.css'>
     <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script type='text/javascript' src='libs/Markdown.Converter.js'></script>    
   </head>
   <body>
     <div class='header'>
@@ -30,8 +31,14 @@
 
     <script type="text/javascript">
       $(function() {
-        console.log( "ready!" );
-        $( ".content_body" ).load( "blogs/example.md" );
+        $( '.content_body' ).load( 'blogs/example.md' );        
+        var converter = new Markdown.Converter(),
+                /* Alias the conversion method to make it easier to swap libraries in the future. */
+            markdownToHtml = converter.makeHtml;
+ 
+            $.get('blogs/example.md').success(function (data) {
+                $('.content_body').html(markdownToHtml(data));
+            });
       });
 
     </script>
