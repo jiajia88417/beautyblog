@@ -33,12 +33,12 @@
     <script type="text/javascript">
       var loadContent = function(path) {
         $( '.content_body' ).load( path );
-          var converter = new Markdown.Converter(),
-          markdownToHtml = converter.makeHtml;
-          $.get(path)
-           .success(function (data) {
-              $('.content_body').html(markdownToHtml(data));
-          });
+        var converter = new Markdown.Converter(),
+            markdownToHtml = converter.makeHtml;
+        $.get(path)
+         .success(function (data) {
+            $('.content_body').html(markdownToHtml(data));
+        });
       };        
       
       $(function() {
