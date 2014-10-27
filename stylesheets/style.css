@@ -1,13 +1,16 @@
 body {
   margin: 0px;
   background:  #D67AA3;
-  min-width: 800px;
+  min-width: 1200px;
 }
 
+body > .header{
+  width : 100%;  
+  min-width: 1200px;  
+}
 /* header image and page tile */
 body > .header > img.header_img{
   width : 100%;
-  min-width: 800px;
 }
 body > .header > h3 {
   font-family: 微软雅黑, 黑体;
@@ -16,7 +19,7 @@ body > .header > h3 {
   display: inline;
   color: #8E355D;
   top : 30px;
-  left : 500px;
+  left : 30%;
   position: absolute;
 }
 
@@ -24,7 +27,7 @@ body > .header > h3 {
 .header_links {
     left: 30%;
     top: auto;
-    min-width: 400px;
+    min-width: 1200px;
     position: absolute;
 }
 .header_links > ul {
@@ -49,9 +52,41 @@ body > .header > h3 {
     background-color: #F9A4B7;
 }
 
-.content_body {
-    width: 600px;
-    position: relative;
-    border: 2px solid;
-    border-radius: 25px;
+
+.main_container{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px; 
+    min-width: 1200px;
 }
+.content_body {
+    width: 50%;
+    min-width: 600px;
+    position: relative;
+/*    border: 2px solid; */
+    border-radius: 25px;
+    background-color: white;
+    min-height: 100px;
+    float:left;
+}
+.blog_list {
+    width: 25%;
+    min-width: 300px;
+    position: relative;
+/*    border: 2px solid; */
+    border-radius: 25px;
+    background-color: yellow;
+    min-height: 100px;
+    float:left;
+}
+.recommend_list {
+    width: 25%;
+    min-width: 300px;
+    position: relative;
+/*    border: 2px solid; */
+    border-radius: 25px;
+    background-color: blue;
+    min-height: 100px;
+    float:left;
+}
+

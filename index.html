@@ -20,27 +20,33 @@
         <li><a href="#">biubiu推荐</a></li>        
         <li><a href="#">联系biubiu</a></li>
       </ul>
-      <div class='content_body'>
-
-      </div>
+    </div>
+    <div class='main_container'>
+      <div class='blog_list'></div>
+      <div class='content_body'></div>      
+      <div class='recommend_list'></div>        
     </div>
 
 
 
 
-
     <script type="text/javascript">
+      var loadContent = function(path) {
+        $( '.content_body' ).load( 'blogs/example.md' );
+          var converter = new Markdown.Converter(),
+          markdownToHtml = converter.makeHtml;
+          $.get('blogs/example.md')
+           .success(function (data) {
+              $('.content_body').html(markdownToHtml(data));
+          });
+      };        
+      
       $(function() {
-        $( '.content_body' ).load( 'blogs/example.md' );        
-        var converter = new Markdown.Converter(),
-                /* Alias the conversion method to make it easier to swap libraries in the future. */
-            markdownToHtml = converter.makeHtml;
- 
-            $.get('blogs/example.md').success(function (data) {
-                $('.content_body').html(markdownToHtml(data));
-            });
-      });
-
+        $(window).on('hashchange',function(){ 
+           console.log(location.hash);
+           loadContent(location.hash.slice(1));
+        });
+      })
     </script>
 
   </body>
