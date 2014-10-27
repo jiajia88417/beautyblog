@@ -32,7 +32,7 @@
 
     <script type="text/javascript">
       var loadContent = function(path) {
-        $( '.content_body' ).load( path );
+        // $( '.content_body' ).load( path );
         var converter = new Markdown.Converter(),
             markdownToHtml = converter.makeHtml;
         $.get(path)
