@@ -58,35 +58,30 @@ body > .header > h3 {
     margin-left: 20px;
     margin-right: 20px; 
     min-width: 1200px;
+    width: 100%;
 }
 .content_body {
-    width: 50%;
-    min-width: 600px;
+    width: 46%;
+    min-width: 560px;
     position: relative;
-/*    border: 2px solid; */
     border-radius: 25px;
     background-color: white;
     min-height: 100px;
     float:left;
+    padding: 10px;
+    margin-right: 10px;     
 }
-.blog_list {
-    width: 25%;
-    min-width: 300px;
+.blog_list, .recommend_list{
+    width: 22%;
+    min-width: 260px;
     position: relative;
-/*    border: 2px solid; */
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: yellow;
     min-height: 100px;
     float:left;
+    padding: 10px;
+    margin-right: 10px; 
 }
-.recommend_list {
-    width: 25%;
-    min-width: 300px;
-    position: relative;
-/*    border: 2px solid; */
-    border-radius: 25px;
-    background-color: blue;
-    min-height: 100px;
-    float:left;
+.blog_list{
+  margin-left: 10px;
 }
-
