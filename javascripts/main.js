@@ -106,7 +106,7 @@ function($,
     }
 
   	var loadGallary = function(path) {
-      $.get(path+'item.md')
+      $.get(path+'gallery.md')
          .success(function (data) {
             $('.gallery').html(markdownToHtml(data));
           })
