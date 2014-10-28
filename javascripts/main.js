@@ -61,12 +61,9 @@ function($,
 
       // months
       for(var month in blogs[year]){
-        var monthBlogCount = 0;  
-        var monthBlogCountSpanID = year+''+month;
+        var monthBlogCount = blogs[year][month].length; 
 
-        var monthEle = $('<li>'+month+
-                           '<div id='+monthBlogCountSpanID+'></div>'+
-                         '</li>');
+        var monthEle = $('<li>'+month+' ('+monthBlogCount+')</li>');
         monthList.append(monthEle);
         var dayList = $('<ul></ul>');
         monthEle.append(dayList);
@@ -77,14 +74,8 @@ function($,
               '<a href=#'+blogs[year][month][blogindex].path+'>'+
               blogs[year][month][blogindex].title
               +'</a></li>');
-            dayList.append(bEle);            
-            monthBlogCount++;
+            dayList.append(bEle);
         };
-
-        if(monthBlogCount != 0){
-          $('#'+monthBlogCountSpanID).html = monthBlogCount;
-//          monthEle.prepend('<div>3<div>');
-        }
       }
     }
     blogListDom.prepend(yearList);
