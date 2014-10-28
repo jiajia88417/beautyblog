@@ -1,6 +1,13 @@
-define(['jquery'], function ($) {    
-    var bloglist = function BlogList() {
-        
+define({
+	'blogs' : [
+	  '20140831',
+	  '20140417',
+	  '20140415',
+	  '2013041702',
+	  '2013041701'	  
+	],
+    'main': {
+        'content': 'main.md',
+        'recommend': []
     }
-    return bloglist;
 });
