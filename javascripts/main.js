@@ -108,12 +108,12 @@ function($,
   	var loadGallary = function(path) {
       $.get(path+'item.md')
          .success(function (data) {
-            $('.gallary').html(markdownToHtml(data));
+            $('.gallery').html(markdownToHtml(data));
           })
          .fail(function() {
-            $.get('main.md')
+            $.get('main_gallery.md')
              .success(function (data) {
-              $('.gallary').html(markdownToHtml(data));
+              $('.gallery').html(markdownToHtml(data));
              })
           });
     };        
