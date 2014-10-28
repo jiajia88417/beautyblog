@@ -76,7 +76,8 @@ body > .header > h3 {
     min-width: 260px;
     position: relative;
     border-radius: 10px;
-    background-color: #EBEB5F;
+/*    background-color: #EBEB5F;  */
+    background-color: #EBEB69;
     min-height: 100px;
     float:left;
     padding: 10px;
