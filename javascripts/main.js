@@ -93,12 +93,12 @@ function($,
     var converter = new Markdown.Converter(),
         markdownToHtml = converter.makeHtml;
     var loadContent = function(path) {
-        $.get(path+'content.md')
+        $.get(path+'/content.md')
          .success(function (data) {
             $('.content_body').html(markdownToHtml(data));
           })
          .fail(function() {
-            $.get('main.md')
+            $.get('main/content.md')
              .success(function (data) {
               $('.content_body').html(markdownToHtml(data));
              })
@@ -106,12 +106,12 @@ function($,
     }
 
   	var loadGallary = function(path) {
-      $.get(path+'gallery.md')
+      $.get(path+'/gallery.md')
          .success(function (data) {
             $('.gallery').html(markdownToHtml(data));
           })
          .fail(function() {
-            $.get('main_gallery.md')
+            $.get('main/gallery.md')
              .success(function (data) {
               $('.gallery').html(markdownToHtml(data));
              })
