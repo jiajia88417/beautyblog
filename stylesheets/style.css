@@ -71,7 +71,7 @@ body > .header > h3 {
     padding: 10px;
     margin-right: 10px;     
 }
-.blog_list, .recommend_list{
+.blog_list, .gallary{
     width: 22%;
     min-width: 260px;
     position: relative;

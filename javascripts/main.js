@@ -61,10 +61,16 @@ function($,
 
       // months
       for(var month in blogs[year]){
-        var monthEle = $('<li>'+month+'</li>');
+        var monthBlogCount = 0;  
+        var monthBlogCountSpanID = year+''+month;
+
+        var monthEle = $('<li>'+month+
+                           '<div id='+monthBlogCountSpanID+'></div>'+
+                         '</li>');
         monthList.append(monthEle);
         var dayList = $('<ul></ul>');
         monthEle.append(dayList);
+
         // days
         for (var blogindex in blogs[year][month]) {
             var bEle = $('<li>'+
@@ -72,35 +78,55 @@ function($,
               blogs[year][month][blogindex].title
               +'</a></li>');
             dayList.append(bEle);            
+            monthBlogCount++;
         };
+
+        if(monthBlogCount != 0){
+          $('#'+monthBlogCountSpanID).html = monthBlogCount;
+//          monthEle.prepend('<div>3<div>');
+        }
       }
     }
     blogListDom.prepend(yearList);
 
 
-
-  	 var loadContent = function(path) {
-        var converter = new Markdown.Converter(),
-            markdownToHtml = converter.makeHtml;
+    var converter = new Markdown.Converter(),
+        markdownToHtml = converter.makeHtml;
+    var loadContent = function(path) {
         $.get(path+'content.md')
          .success(function (data) {
             $('.content_body').html(markdownToHtml(data));
           })
          .fail(function() {
-            $.get(path)
+            $.get('main.md')
              .success(function (data) {
               $('.content_body').html(markdownToHtml(data));
              })
           });
-      };        
-      
-      $(function() {
-        $(window).on('hashchange',function(){ 
-           loadContent(location.hash.slice(1));
-        });
+    }
 
-        loadContent('main.md');
-      })
+  	var loadGallary = function(path) {
+      $.get(path+'item.md')
+         .success(function (data) {
+            $('.gallary').html(markdownToHtml(data));
+          })
+         .fail(function() {
+            $.get('main.md')
+             .success(function (data) {
+              $('.gallary').html(markdownToHtml(data));
+             })
+          });
+    };        
+      
+    $(function() {
+      $(window).on('hashchange',function(){ 
+           loadContent(location.hash.slice(1));
+           loadGallary(location.hash.slice(1));           
+           // update class of items in the blog list 
+      });
+
+      loadContent('main.md');
+    })
 
   });		
   
