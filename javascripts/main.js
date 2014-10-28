@@ -54,7 +54,12 @@ function($,
     var blogListDom = $('div.blog_list');
     var yearList = $('<ul></ul>');
     for(var year in blogs){
-    	var yearEle = $('<li>'+year+' (??) '+'</li>');  
+      var yearBlogCount = 0;
+      for(var month in blogs[year]){
+        yearBlogCount += blogs[year][month].length;
+      }
+
+    	var yearEle = $('<li>'+year+' ('+yearBlogCount+') '+'</li>');  
       yearList.prepend(yearEle);      
       var monthList = $('<ul></ul>');
       yearEle.append(monthList);
