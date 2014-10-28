@@ -105,7 +105,7 @@ function($,
           });
     }
 
-  	var loadGallary = function(path) {
+  	var loadGallery = function(path) {
       $.get(path+'/gallery.md')
          .success(function (data) {
             $('.gallery').html(markdownToHtml(data));
@@ -121,11 +121,12 @@ function($,
     $(function() {
       $(window).on('hashchange',function(){ 
            loadContent(location.hash.slice(1));
-           loadGallary(location.hash.slice(1));           
+           loadGallery(location.hash.slice(1));           
            // update class of items in the blog list 
       });
 
-      loadContent('main.md');
+      loadContent('main');
+      loadGallery('main');      
     })
 
   });		
