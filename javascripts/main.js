@@ -114,15 +114,22 @@ function($,
           });
     };        
       
+
+    var loadPage = function(path){
+      if(path === undefined || path === ''){
+        path = 'main';
+      }
+
+      loadContent(path);
+      loadGallery(path);
+    }  
     $(function() {
       $(window).on('hashchange',function(){ 
-           loadContent(location.hash.slice(1));
-           loadGallery(location.hash.slice(1));           
+        loadPage(location.hash.slice(1));
            // update class of items in the blog list 
       });
 
-      loadContent('main');
-      loadGallery('main');      
+      loadPage(location.hash.slice(1));
     })
 
   });		
