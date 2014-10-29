@@ -94,30 +94,22 @@ function($,
             $('.content_body').html(markdownToHtml(data));
           })
          .fail(function() {
+            // implicitly load main page
             window.location = '';
-            // $.get('main/content.md')
-            //  .success(function (data) {
-            //   $('.content_body').html(markdownToHtml(data));
-            //  })
           });
     }
 
   	var loadGallery = function(path) {
       $.get(path+'/gallery.md')
-         .success(function (data) {
+       .success(function (data) {
             $('.gallery').html(markdownToHtml(data));
-          })
-         .fail(function() {
-            // $.get('main/gallery.md')
-            //  .success(function (data) {
-            //   $('.gallery').html(markdownToHtml(data));
-            //  })
-          });
+        });
     };        
       
 
     var loadPage = function(path){
       if(path === undefined || path === ''){
+        // load main page on error
         path = 'main';
       }
 
@@ -129,7 +121,7 @@ function($,
         loadPage(location.hash.slice(1));
            // update class of items in the blog list 
       });
-
+      // on first load
       loadPage(location.hash.slice(1));
     })
 
