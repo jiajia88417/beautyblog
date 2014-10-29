@@ -1,7 +1,10 @@
-body {
+html, body {
   margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
   background:  #D67AA3;
-  min-width: 1200px;
+  width: 1400px;
+  position: relative;
 }
 
 body > .header{

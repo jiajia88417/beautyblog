@@ -110,7 +110,9 @@ function($,
           })
          .fail(function() {
             // implicitly load main page
-            window.location = '';
+            if(path != 'main'){
+              window.location = '';
+            }
           });
     }
 
