@@ -64,11 +64,26 @@ function($,
       var monthList = $('<ul></ul>');
       yearEle.append(monthList);
 
+
+      var monthNameMap = {
+        '01' : 'Jan',
+        '02' : 'Feb',
+        '03' : 'Mar',
+        '04' : 'Apr',
+        '05' : 'May',
+        '06' : 'Jun',
+        '07' : 'Jul',
+        '08' : 'Aug',
+        '09' : 'Sep',
+        '10' : 'Oct',
+        '11' : 'Nov',
+        '12' : 'Dec'        
+      }
       // months
       for(var month in blogs[year]){
         var monthBlogCount = blogs[year][month].length; 
 
-        var monthEle = $('<li>'+month+' ('+monthBlogCount+')</li>');
+        var monthEle = $('<li>'+monthNameMap[month]+' ('+monthBlogCount+')</li>');
         monthList.append(monthEle);
         var dayList = $('<ul></ul>');
         monthEle.append(dayList);
