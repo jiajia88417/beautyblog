@@ -94,11 +94,11 @@ function($,
             $('.content_body').html(markdownToHtml(data));
           })
          .fail(function() {
-            window.location.hash('');
-            $.get('main/content.md')
-             .success(function (data) {
-              $('.content_body').html(markdownToHtml(data));
-             })
+            window.location = '';
+            // $.get('main/content.md')
+            //  .success(function (data) {
+            //   $('.content_body').html(markdownToHtml(data));
+            //  })
           });
     }
 
@@ -108,10 +108,10 @@ function($,
             $('.gallery').html(markdownToHtml(data));
           })
          .fail(function() {
-            $.get('main/gallery.md')
-             .success(function (data) {
-              $('.gallery').html(markdownToHtml(data));
-             })
+            // $.get('main/gallery.md')
+            //  .success(function (data) {
+            //   $('.gallery').html(markdownToHtml(data));
+            //  })
           });
     };        
       
