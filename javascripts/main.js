@@ -94,6 +94,7 @@ function($,
             $('.content_body').html(markdownToHtml(data));
           })
          .fail(function() {
+            window.location.hash('');
             $.get('main/content.md')
              .success(function (data) {
               $('.content_body').html(markdownToHtml(data));
